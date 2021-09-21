@@ -2,6 +2,12 @@ import React, { useState, useRef, useEffect } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
 
+const merge = function(s1, s2){
+    return [...s1].map(function(e, i) {
+       return `${e}${s2[i] || ''}` 
+    }).join('')
+}
+
 const UseRef = (props) => {
     const [value1, setValue1] = useState('')
     const [value2, setValue2] = useState('') 
